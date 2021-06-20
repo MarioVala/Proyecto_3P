@@ -16,7 +16,7 @@ namespace SimiSoft.DAL
         private static volatile DataAccess instance = null;
         private static readonly object padlock = new object();
         //public static string conString = "Server=proyecto3p-server.database.windows.net;Database=simisoftdb;User Id=Administrador;Password=Proyecto.3P";
-        public static string conString = "Server=DESKTOP-21KVI4D;Database=simisoftdb;Trusted_Connection=True";
+        public static string conString = "Server=DESKTOP-2R4CM0U;Database=simisoftdb;Trusted_Connection=True";
 
         private DataAccess() { }
 

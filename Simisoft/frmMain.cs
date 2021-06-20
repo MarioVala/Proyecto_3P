@@ -108,5 +108,24 @@ namespace Simisoft
 
             SplashScreenManager.CloseForm();
         }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+                if (form.GetType() == typeof(frmProveedor))
+                {
+                    form.Activate();
+                    return;
+                }
+
+            SplashScreenManager.ShowDefaultWaitForm("Por favor espere", "Cargando Proveedores...");
+
+            new frmProveedor { MdiParent = this }.Show();
+
+            SplashScreenManager.CloseForm();
+        }
+
+
+
     }
 }

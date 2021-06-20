@@ -127,6 +127,18 @@
     <Compile Include="frmNMSucursal.Designer.cs">
       <DependentUpon>frmNMSucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNProveedor.Designer.cs">
+      <DependentUpon>frmNProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSucursales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,12 @@
     <EmbeddedResource Include="frmNMSucursal.resx">
       <DependentUpon>frmNMSucursal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNProveedor.resx">
+      <DependentUpon>frmNProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSucursales.resx">
       <DependentUpon>frmSucursales.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +206,7 @@
     <None Include="Properties\DataSources\SimiSoft.BML.detalleMovimientos.datasource" />
     <None Include="Properties\DataSources\SimiSoft.BML.detalleVentas.datasource" />
     <None Include="Properties\DataSources\SimiSoft.BML.Estado.datasource" />
+    <None Include="Properties\DataSources\SimiSoft.BML.Proveedores.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,6 +224,10 @@
     <ProjectReference Include="..\Simisoft.BML\SimiSoft.BML.csproj">
       <Project>{98B8DF4C-9B92-485F-8F69-8F488A5CE2BC}</Project>
       <Name>SimiSoft.BML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimiSoft.DAL\SimiSoft.DAL.csproj">
+      <Project>{0DA6E69A-BD69-4B86-8EFE-F7D5F162E5C5}</Project>
+      <Name>SimiSoft.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
