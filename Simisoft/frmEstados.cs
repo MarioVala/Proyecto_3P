@@ -41,9 +41,9 @@ namespace Simisoft
 
         private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new frmNEstados((int)gvEstados.GetFocusedRowCellValue("idEstado")) { Text = "Modificar Estado" }.ShowDialog();
+            new frmNMSucursal((int)gvEstados.GetFocusedRowCellValue("idEstado")) { Text = "Modificar Estado" }.ShowDialog();
             estadoBindingSource.DataSource = new Estado().GetAll();
-            gvEstados.BestFitColumns();
+            gvEstados.BestFitColumns();            
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
