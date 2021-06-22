@@ -78,6 +78,7 @@ namespace Simisoft
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(164, 208);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -91,6 +92,7 @@ namespace Simisoft
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtTelefono
             // 
@@ -98,6 +100,7 @@ namespace Simisoft
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(132, 20);
             this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtcodigoPostal
             // 
@@ -105,6 +108,7 @@ namespace Simisoft
             this.txtcodigoPostal.Name = "txtcodigoPostal";
             this.txtcodigoPostal.Size = new System.Drawing.Size(132, 20);
             this.txtcodigoPostal.TabIndex = 10;
+            this.txtcodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigoPostal_KeyPress);
             // 
             // txtCalle
             // 
@@ -112,6 +116,7 @@ namespace Simisoft
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(160, 20);
             this.txtCalle.TabIndex = 9;
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
             // labelControl6
             // 
@@ -151,6 +156,7 @@ namespace Simisoft
             this.txtComuna.Name = "txtComuna";
             this.txtComuna.Size = new System.Drawing.Size(160, 20);
             this.txtComuna.TabIndex = 4;
+            this.txtComuna.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComuna_KeyPress);
             // 
             // txtEntidad
             // 
@@ -158,6 +164,7 @@ namespace Simisoft
             this.txtEntidad.Name = "txtEntidad";
             this.txtEntidad.Size = new System.Drawing.Size(160, 20);
             this.txtEntidad.TabIndex = 3;
+            this.txtEntidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntidad_KeyPress);
             // 
             // labelControl2
             // 
@@ -169,8 +176,10 @@ namespace Simisoft
             // 
             // frmNContacto
             // 
+            this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(275, 275);
             this.Controls.Add(this.groupControl1);
             this.MaximizeBox = false;
@@ -202,7 +211,7 @@ namespace Simisoft
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtComuna;
-        private DevExpress.XtraEditors.TextEdit txtEntidad;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtEntidad;
     }
 }

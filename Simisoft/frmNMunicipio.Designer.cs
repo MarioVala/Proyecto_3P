@@ -32,8 +32,8 @@ namespace Simisoft
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -66,14 +66,6 @@ namespace Simisoft
             this.groupControl1.Size = new System.Drawing.Size(258, 244);
             this.groupControl1.TabIndex = 5;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(15, 206);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 13;
-            this.btnGuardar.Text = "Guardar";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(161, 206);
@@ -82,11 +74,19 @@ namespace Simisoft
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(15, 206);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.Text = "Guardar";
+            // 
             // frmNMunicipio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 268);
+            this.ClientSize = new System.Drawing.Size(275, 275);
             this.Controls.Add(this.groupControl1);
             this.Name = "frmNMunicipio";
             this.Text = "frmNMunicipio";

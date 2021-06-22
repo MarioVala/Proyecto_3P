@@ -13,6 +13,13 @@ namespace Simisoft
 {
     public partial class frmNMunicipio : DevExpress.XtraEditors.XtraForm
     {
+        int idMunicipio = 0;
+        public frmNMunicipio(int idMunicipio)
+        {
+            InitializeComponent();
+            this.idMunicipio = idMunicipio;
+        }
+
         public frmNMunicipio()
         {
             InitializeComponent();
