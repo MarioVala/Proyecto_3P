@@ -30,6 +30,7 @@ namespace Simisoft
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.mnArchivo = new DevExpress.XtraBars.BarSubItem();
@@ -45,13 +46,13 @@ namespace Simisoft
             this.btnDetalleVentas = new DevExpress.XtraBars.BarButtonItem();
             this.btnDetalleMovimientos = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMunicipio = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnContacto = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -93,8 +94,8 @@ namespace Simisoft
             this.barButtonItem11,
             this.barButtonItem12,
             this.barButtonItem13,
-            this.barButtonItem14,
-            this.barButtonItem15});
+            this.btnContacto,
+            this.btnMunicipio});
             this.barManager1.MaxItemId = 22;
             // 
             // bar1
@@ -104,8 +105,8 @@ namespace Simisoft
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnArchivo),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnCategorias)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.mnArchivo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.mnCategorias, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.Text = "Herramientas";
@@ -114,6 +115,8 @@ namespace Simisoft
             // 
             this.mnArchivo.Caption = "Archivo";
             this.mnArchivo.Id = 2;
+            this.mnArchivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mnArchivo.ImageOptions.Image")));
+            this.mnArchivo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mnArchivo.ImageOptions.LargeImage")));
             this.mnArchivo.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.mnArchivo.Name = "mnArchivo";
@@ -122,13 +125,17 @@ namespace Simisoft
             // 
             this.btnSalir.Caption = "Salir";
             this.btnSalir.Id = 3;
+            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
+            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // mnCategorias
             // 
-            this.mnCategorias.Caption = "Categorias";
+            this.mnCategorias.Caption = "Catálogos";
             this.mnCategorias.Id = 1;
+            this.mnCategorias.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mnCategorias.ImageOptions.Image")));
+            this.mnCategorias.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mnCategorias.ImageOptions.LargeImage")));
             this.mnCategorias.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
@@ -140,13 +147,13 @@ namespace Simisoft
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDetalleVentas),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDetalleMovimientos),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnMunicipio),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnContacto),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10)});
             this.mnCategorias.Name = "mnCategorias";
             // 
@@ -154,30 +161,39 @@ namespace Simisoft
             // 
             this.barButtonItem2.Caption = "Categoria";
             this.barButtonItem2.Id = 8;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "Cliente";
             this.barButtonItem3.Id = 9;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.Name = "barButtonItem3";
             // 
             // barButtonItem4
             // 
             this.barButtonItem4.Caption = "Compra";
             this.barButtonItem4.Id = 10;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "Localidad";
             this.barButtonItem5.Id = 11;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
             // 
             // btnEstados
             // 
             this.btnEstados.Caption = "Estados";
             this.btnEstados.Id = 4;
+            this.btnEstados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEstados.ImageOptions.Image")));
+            this.btnEstados.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEstados.ImageOptions.LargeImage")));
             this.btnEstados.Name = "btnEstados";
             this.btnEstados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstados_ItemClick);
             // 
@@ -185,12 +201,16 @@ namespace Simisoft
             // 
             this.barButtonItem6.Caption = "Inventario";
             this.barButtonItem6.Id = 12;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
             // btnDetalleCompras
             // 
             this.btnDetalleCompras.Caption = "Detalles de Compras";
             this.btnDetalleCompras.Id = 5;
+            this.btnDetalleCompras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCompras.ImageOptions.Image")));
+            this.btnDetalleCompras.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDetalleCompras.ImageOptions.LargeImage")));
             this.btnDetalleCompras.Name = "btnDetalleCompras";
             this.btnDetalleCompras.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
@@ -198,6 +218,8 @@ namespace Simisoft
             // 
             this.btnDetalleVentas.Caption = "Detalles de Ventas";
             this.btnDetalleVentas.Id = 6;
+            this.btnDetalleVentas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleVentas.ImageOptions.Image")));
+            this.btnDetalleVentas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDetalleVentas.ImageOptions.LargeImage")));
             this.btnDetalleVentas.Name = "btnDetalleVentas";
             this.btnDetalleVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDetalleVentas_ItemClick);
             // 
@@ -205,6 +227,8 @@ namespace Simisoft
             // 
             this.btnDetalleMovimientos.Caption = "Detalles de Movimientos";
             this.btnDetalleMovimientos.Id = 7;
+            this.btnDetalleMovimientos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleMovimientos.ImageOptions.Image")));
+            this.btnDetalleMovimientos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDetalleMovimientos.ImageOptions.LargeImage")));
             this.btnDetalleMovimientos.Name = "btnDetalleMovimientos";
             this.btnDetalleMovimientos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDetalleMovimientos_ItemClick);
             // 
@@ -212,18 +236,24 @@ namespace Simisoft
             // 
             this.barButtonItem7.Caption = "Movimiento";
             this.barButtonItem7.Id = 13;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
             this.barButtonItem7.Name = "barButtonItem7";
             // 
-            // barButtonItem15
+            // btnMunicipio
             // 
-            this.barButtonItem15.Caption = "Municipio";
-            this.barButtonItem15.Id = 21;
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.btnMunicipio.Caption = "Municipio";
+            this.btnMunicipio.Id = 21;
+            this.btnMunicipio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.btnMunicipio.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.btnMunicipio.Name = "btnMunicipio";
             // 
             // barButtonItem8
             // 
             this.barButtonItem8.Caption = "Sucursal";
             this.barButtonItem8.Id = 14;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
@@ -231,36 +261,49 @@ namespace Simisoft
             // 
             this.barButtonItem9.Caption = "Usuario";
             this.barButtonItem9.Id = 15;
+            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
             this.barButtonItem9.Name = "barButtonItem9";
             // 
             // barButtonItem11
             // 
             this.barButtonItem11.Caption = "Producto";
             this.barButtonItem11.Id = 17;
+            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
             this.barButtonItem11.Name = "barButtonItem11";
             // 
             // barButtonItem12
             // 
             this.barButtonItem12.Caption = "Producto-Proveedor";
             this.barButtonItem12.Id = 18;
+            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
+            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
             this.barButtonItem12.Name = "barButtonItem12";
             // 
             // barButtonItem13
             // 
             this.barButtonItem13.Caption = "Proveedor";
             this.barButtonItem13.Id = 19;
+            this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
+            this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
             this.barButtonItem13.Name = "barButtonItem13";
             // 
-            // barButtonItem14
+            // btnContacto
             // 
-            this.barButtonItem14.Caption = "Contacto";
-            this.barButtonItem14.Id = 20;
-            this.barButtonItem14.Name = "barButtonItem14";
+            this.btnContacto.Caption = "Contacto";
+            this.btnContacto.Id = 20;
+            this.btnContacto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.btnContacto.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.btnContacto.Name = "btnContacto";
+            this.btnContacto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem10
             // 
             this.barButtonItem10.Caption = "Venta";
             this.barButtonItem10.Id = 16;
+            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
             this.barButtonItem10.Name = "barButtonItem10";
             // 
             // barDockControlTop
@@ -269,35 +312,31 @@ namespace Simisoft
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(798, 29);
+            this.barDockControlTop.Size = new System.Drawing.Size(532, 25);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 553);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 378);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(798, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(532, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 524);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 353);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(798, 29);
+            this.barDockControlRight.Location = new System.Drawing.Point(532, 25);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 353);
             // 
             // barButtonItem1
             // 
@@ -311,15 +350,15 @@ namespace Simisoft
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 553);
+            this.ClientSize = new System.Drawing.Size(532, 378);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FarmSoft - 2021";
@@ -361,7 +400,7 @@ namespace Simisoft
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem btnContacto;
+        private DevExpress.XtraBars.BarButtonItem btnMunicipio;
     }
 }
