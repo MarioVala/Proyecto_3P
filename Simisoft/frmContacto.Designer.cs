@@ -1,7 +1,7 @@
 ﻿
 namespace Simisoft
 {
-    partial class frmMunicipio
+    partial class frmContacto
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,7 @@ namespace Simisoft
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMunicipio));
-            this.gcMunicipio = new DevExpress.XtraGrid.GridControl();
-            this.municipiosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gvMunicipio = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidMunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidEstado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombreMunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContacto));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
@@ -47,59 +41,20 @@ namespace Simisoft
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            ((System.ComponentModel.ISupportInitialize)(this.gcMunicipio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.municipiosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMunicipio)).BeginInit();
+            this.gcContacto = new DevExpress.XtraGrid.GridControl();
+            this.contactoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvContacto = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidContacto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colentidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcomuna = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigoPostal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltelefono = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcContacto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvContacto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gcMunicipio
-            // 
-            this.gcMunicipio.DataSource = this.municipiosBindingSource;
-            this.gcMunicipio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMunicipio.Location = new System.Drawing.Point(0, 24);
-            this.gcMunicipio.MainView = this.gvMunicipio;
-            this.gcMunicipio.Name = "gcMunicipio";
-            this.gcMunicipio.Size = new System.Drawing.Size(696, 337);
-            this.gcMunicipio.TabIndex = 0;
-            this.gcMunicipio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvMunicipio});
-            this.gcMunicipio.Click += new System.EventHandler(this.gcMunicipio_Click);
-            // 
-            // municipiosBindingSource
-            // 
-            this.municipiosBindingSource.DataSource = typeof(SimiSoft.BML.Municipios);
-            // 
-            // gvMunicipio
-            // 
-            this.gvMunicipio.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colidMunicipio,
-            this.colidEstado,
-            this.colnombreMunicipio});
-            this.gvMunicipio.GridControl = this.gcMunicipio;
-            this.gvMunicipio.Name = "gvMunicipio";
-            // 
-            // colidMunicipio
-            // 
-            this.colidMunicipio.Caption = "colidMunicipio";
-            this.colidMunicipio.FieldName = "ID:";
-            this.colidMunicipio.Name = "colidMunicipio";
-            this.colidMunicipio.Visible = true;
-            this.colidMunicipio.VisibleIndex = 0;
-            // 
-            // colidEstado
-            // 
-            this.colidEstado.FieldName = "Estado ID:";
-            this.colidEstado.Name = "colidEstado";
-            this.colidEstado.Visible = true;
-            this.colidEstado.VisibleIndex = 1;
-            // 
-            // colnombreMunicipio
-            // 
-            this.colnombreMunicipio.FieldName = "Nombre del Municipio";
-            this.colnombreMunicipio.Name = "colnombreMunicipio";
-            this.colnombreMunicipio.Visible = true;
-            this.colnombreMunicipio.VisibleIndex = 2;
             // 
             // barManager1
             // 
@@ -128,7 +83,9 @@ namespace Simisoft
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnNuevo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnModificar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEliminar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar1.Offset = 9;
+            this.bar1.Offset = 1;
+            this.bar1.OptionsBar.DrawBorder = false;
+            this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.Text = "Herramientas";
             // 
             // btnActualizar
@@ -199,22 +156,95 @@ namespace Simisoft
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 337);
             // 
-            // frmMunicipio
+            // gcContacto
+            // 
+            this.gcContacto.DataSource = this.contactoBindingSource;
+            this.gcContacto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcContacto.Location = new System.Drawing.Point(0, 24);
+            this.gcContacto.MainView = this.gvContacto;
+            this.gcContacto.MenuManager = this.barManager1;
+            this.gcContacto.Name = "gcContacto";
+            this.gcContacto.Size = new System.Drawing.Size(696, 337);
+            this.gcContacto.TabIndex = 4;
+            this.gcContacto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvContacto});
+            // 
+            // contactoBindingSource
+            // 
+            this.contactoBindingSource.DataSource = typeof(SimiSoft.BML.Contacto);
+            // 
+            // gvContacto
+            // 
+            this.gvContacto.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colidContacto,
+            this.colentidad,
+            this.colcomuna,
+            this.colcalle,
+            this.colcodigoPostal,
+            this.coltelefono});
+            this.gvContacto.GridControl = this.gcContacto;
+            this.gvContacto.Name = "gvContacto";
+            // 
+            // colidContacto
+            // 
+            this.colidContacto.Caption = "colidContacto";
+            this.colidContacto.FieldName = "ID";
+            this.colidContacto.Name = "colidContacto";
+            this.colidContacto.Visible = true;
+            this.colidContacto.VisibleIndex = 0;
+            // 
+            // colentidad
+            // 
+            this.colentidad.FieldName = "Entidad";
+            this.colentidad.Name = "colentidad";
+            this.colentidad.Visible = true;
+            this.colentidad.VisibleIndex = 1;
+            // 
+            // colcomuna
+            // 
+            this.colcomuna.FieldName = "Comuna";
+            this.colcomuna.Name = "colcomuna";
+            this.colcomuna.Visible = true;
+            this.colcomuna.VisibleIndex = 2;
+            // 
+            // colcalle
+            // 
+            this.colcalle.FieldName = "Calle";
+            this.colcalle.Name = "colcalle";
+            this.colcalle.Visible = true;
+            this.colcalle.VisibleIndex = 3;
+            // 
+            // colcodigoPostal
+            // 
+            this.colcodigoPostal.FieldName = "Codigo Postal";
+            this.colcodigoPostal.Name = "colcodigoPostal";
+            this.colcodigoPostal.Visible = true;
+            this.colcodigoPostal.VisibleIndex = 4;
+            // 
+            // coltelefono
+            // 
+            this.coltelefono.FieldName = "Teléfono";
+            this.coltelefono.Name = "coltelefono";
+            this.coltelefono.Visible = true;
+            this.coltelefono.VisibleIndex = 5;
+            // 
+            // frmContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 361);
-            this.Controls.Add(this.gcMunicipio);
+            this.Controls.Add(this.gcContacto);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmMunicipio";
-            this.Text = "frmMunicipio";
-            ((System.ComponentModel.ISupportInitialize)(this.gcMunicipio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.municipiosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMunicipio)).EndInit();
+            this.Name = "frmContacto";
+            this.Text = "frmContacto";
+            this.Load += new System.EventHandler(this.frmContacto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcContacto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvContacto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,8 +252,6 @@ namespace Simisoft
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gcMunicipio;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvMunicipio;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -234,9 +262,14 @@ namespace Simisoft
         private DevExpress.XtraBars.BarButtonItem btnNuevo;
         private DevExpress.XtraBars.BarButtonItem btnModificar;
         private DevExpress.XtraBars.BarButtonItem btnEliminar;
-        private System.Windows.Forms.BindingSource municipiosBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colidMunicipio;
-        private DevExpress.XtraGrid.Columns.GridColumn colidEstado;
-        private DevExpress.XtraGrid.Columns.GridColumn colnombreMunicipio;
+        private DevExpress.XtraGrid.GridControl gcContacto;
+        private System.Windows.Forms.BindingSource contactoBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvContacto;
+        private DevExpress.XtraGrid.Columns.GridColumn colidContacto;
+        private DevExpress.XtraGrid.Columns.GridColumn colentidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colcomuna;
+        private DevExpress.XtraGrid.Columns.GridColumn colcalle;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigoPostal;
+        private DevExpress.XtraGrid.Columns.GridColumn coltelefono;
     }
 }
