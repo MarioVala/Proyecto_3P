@@ -108,5 +108,20 @@ namespace Simisoft
 
             SplashScreenManager.CloseForm();
         }
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+                if (form.GetType() == typeof(frmContacto))
+                {
+                    form.Activate();
+                    return;
+                }
+
+            SplashScreenManager.ShowDefaultWaitForm("Por favor espere", "Cargando Contacto...");
+
+            new frmContacto { MdiParent = this }.Show();
+
+            SplashScreenManager.CloseForm();
+        }
     }
-}
+    }
