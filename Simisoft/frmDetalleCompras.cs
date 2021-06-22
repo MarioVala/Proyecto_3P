@@ -44,5 +44,14 @@ namespace Simisoft
             detalleCompraBindingSource.DataSource = new detalleCompra().GetAll();
             gvDetalleCompras.BestFitColumns();
         }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int indice = gvDetalleCompras.FocusedRowHandle;
+            string indiceconvertido = Convert.ToString(gvDetalleCompras.GetRowCellValue(indice, "idDetalleCompra")); 
+            detalleCompraBindingSource.DataSource = new detalleCompra().Delete(indiceconvertido);
+            detalleCompraBindingSource.DataSource = new detalleCompra().GetAll();
+            gvDetalleCompras.BestFitColumns();            
+        }
     }
 }

@@ -26,10 +26,10 @@ namespace SimiSoft.BML
             return dataAccess.Execute("stp_estados_add", parametros);
         }
 
-        public int Delete()
+        public int Delete(string idaborrar)
         {
             var parametros = new DynamicParameters();
-            parametros.Add("@idEstado", idEstado);
+            parametros.Add("@idEstado", idaborrar);
             return dataAccess.Execute("stp_estados_delete", parametros);
         }
 

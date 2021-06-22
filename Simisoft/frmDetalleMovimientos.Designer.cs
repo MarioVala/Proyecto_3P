@@ -57,10 +57,10 @@ namespace Simisoft
             // 
             this.gcDetalleMovimientos.DataSource = this.detalleMovimientosBindingSource;
             this.gcDetalleMovimientos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDetalleMovimientos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDetalleMovimientos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDetalleMovimientos.Location = new System.Drawing.Point(0, 30);
             this.gcDetalleMovimientos.MainView = this.gvDetalleMovimientos;
-            this.gcDetalleMovimientos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDetalleMovimientos.Margin = new System.Windows.Forms.Padding(4);
             this.gcDetalleMovimientos.Name = "gcDetalleMovimientos";
             this.gcDetalleMovimientos.Size = new System.Drawing.Size(798, 530);
             this.gcDetalleMovimientos.TabIndex = 0;
@@ -182,6 +182,7 @@ namespace Simisoft
             this.btnEliminar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEliminar.ImageOptions.SvgImage")));
             this.btnEliminar.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // barDockControlTop
             // 

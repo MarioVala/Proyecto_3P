@@ -41,14 +41,18 @@ namespace Simisoft
 
         private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new frmNMSucursal((int)gvEstados.GetFocusedRowCellValue("idEstado")) { Text = "Modificar Estado" }.ShowDialog();
+            new frmNEstados((int)gvEstados.GetFocusedRowCellValue("idEstado")) { Text = "Modificar Estado" }.ShowDialog();
             estadoBindingSource.DataSource = new Estado().GetAll();
             gvEstados.BestFitColumns();            
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            int indice = gvEstados.FocusedRowHandle;
+            string indiceconvertido = Convert.ToString(gvEstados.GetRowCellValue(indice, "idEstado"));
+            estadoBindingSource.DataSource = new Estado().Delete(indiceconvertido);
+            estadoBindingSource.DataSource = new Estado().GetAll();
+            gvEstados.BestFitColumns();
         }
     }
 }
